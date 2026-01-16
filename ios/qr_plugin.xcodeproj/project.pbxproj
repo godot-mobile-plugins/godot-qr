@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		076A67072F0F6ECC00EFE1F3 /* plugin_template_plugin_bootstrap.mm in Sources */ = {isa = PBXBuildFile; fileRef = 076A67062F0F6ECC00EFE1F3 /* plugin_template_plugin_bootstrap.mm */; };
-		07799B802EEE73CC00619332 /* PluginTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07799B7F2EEE73CC00619332 /* PluginTemplate.swift */; };
-		078173322EF018C10087ACA0 /* plugin_template_logger.mm in Sources */ = {isa = PBXBuildFile; fileRef = 078173312EF018C00087ACA0 /* plugin_template_logger.mm */; };
-		90CAAA9924E71FF10013969F /* plugin_template_plugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 90CAAA9824E71FF10013969F /* plugin_template_plugin.mm */; };
-		94A1B0B2910D06DA0F4D3D3C /* Pods_plugin_template_plugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 380C444E6383B0C8ACA7CA7D /* Pods_plugin_template_plugin.framework */; };
+		076A67072F0F6ECC00EFE1F3 /* qr_plugin_bootstrap.mm in Sources */ = {isa = PBXBuildFile; fileRef = 076A67062F0F6ECC00EFE1F3 /* qr_plugin_bootstrap.mm */; };
+		07799B802EEE73CC00619332 /* QR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07799B7F2EEE73CC00619332 /* QR.swift */; };
+		078173322EF018C10087ACA0 /* qr_logger.mm in Sources */ = {isa = PBXBuildFile; fileRef = 078173312EF018C00087ACA0 /* qr_logger.mm */; };
+		90CAAA9924E71FF10013969F /* qr_plugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 90CAAA9824E71FF10013969F /* qr_plugin.mm */; };
+		94A1B0B2910D06DA0F4D3D3C /* Pods_qr_plugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 380C444E6383B0C8ACA7CA7D /* Pods_qr_plugin.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,20 +27,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		073B52C32ECF241C0063663B /* plugin_template_plugin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "plugin_template_plugin-Bridging-Header.h"; sourceTree = "<group>"; };
-		076A67052F0F6ECC00EFE1F3 /* plugin_template_plugin_bootstrap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = plugin_template_plugin_bootstrap.h; sourceTree = "<group>"; };
-		076A67062F0F6ECC00EFE1F3 /* plugin_template_plugin_bootstrap.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = plugin_template_plugin_bootstrap.mm; sourceTree = "<group>"; };
-		07787D0C2EDA6C22009B6F5F /* plugin_template_logger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = plugin_template_logger.h; sourceTree = "<group>"; };
-		07799B7F2EEE73CC00619332 /* PluginTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginTemplate.swift; sourceTree = "<group>"; };
-		078173312EF018C00087ACA0 /* plugin_template_logger.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = plugin_template_logger.mm; sourceTree = "<group>"; };
-		1A3D1E30D9DC57319C20B62B /* Pods-plugin_template_plugin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-plugin_template_plugin.release.xcconfig"; path = "Target Support Files/Pods-plugin_template_plugin/Pods-plugin_template_plugin.release.xcconfig"; sourceTree = "<group>"; };
-		380C444E6383B0C8ACA7CA7D /* Pods_plugin_template_plugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_plugin_template_plugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		403D7C7BCFBA671DEF15AE95 /* Pods-plugin_template_plugin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-plugin_template_plugin.debug.xcconfig"; path = "Target Support Files/Pods-plugin_template_plugin/Pods-plugin_template_plugin.debug.xcconfig"; sourceTree = "<group>"; };
-		90CAAA9424E71FF10013969F /* libplugin_template_plugin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libplugin_template_plugin.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		90CAAA9724E71FF10013969F /* plugin_template_plugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = plugin_template_plugin.h; sourceTree = "<group>"; };
-		90CAAA9824E71FF10013969F /* plugin_template_plugin.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = plugin_template_plugin.mm; sourceTree = "<group>"; };
-		AAE936A0178A8EA9BB753CEA /* Pods-plugin_template_plugin_implementation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-plugin_template_plugin_implementation.debug.xcconfig"; path = "Target Support Files/Pods-inapp_review_plugin/Pods-plugin_template_plugin_implementation.debug.xcconfig"; sourceTree = "<group>"; };
-		D5F7A9D28867FD798F31BF3B /* Pods-plugin_template_plugin_implementation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-plugin_template_plugin_implementation.release.xcconfig"; path = "Target Support Files/Pods-inapp_review_plugin/Pods-plugin_template_plugin_implementation.release.xcconfig"; sourceTree = "<group>"; };
+		073B52C32ECF241C0063663B /* qr_plugin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "qr_plugin-Bridging-Header.h"; sourceTree = "<group>"; };
+		076A67052F0F6ECC00EFE1F3 /* qr_plugin_bootstrap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qr_plugin_bootstrap.h; sourceTree = "<group>"; };
+		076A67062F0F6ECC00EFE1F3 /* qr_plugin_bootstrap.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = qr_plugin_bootstrap.mm; sourceTree = "<group>"; };
+		07787D0C2EDA6C22009B6F5F /* qr_logger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qr_logger.h; sourceTree = "<group>"; };
+		07799B7F2EEE73CC00619332 /* QR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QR.swift; sourceTree = "<group>"; };
+		078173312EF018C00087ACA0 /* qr_logger.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = qr_logger.mm; sourceTree = "<group>"; };
+		1A3D1E30D9DC57319C20B62B /* Pods-qr_plugin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-qr_plugin.release.xcconfig"; path = "Target Support Files/Pods-qr_plugin/Pods-qr_plugin.release.xcconfig"; sourceTree = "<group>"; };
+		380C444E6383B0C8ACA7CA7D /* Pods_qr_plugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_qr_plugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		403D7C7BCFBA671DEF15AE95 /* Pods-qr_plugin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-qr_plugin.debug.xcconfig"; path = "Target Support Files/Pods-qr_plugin/Pods-qr_plugin.debug.xcconfig"; sourceTree = "<group>"; };
+		90CAAA9424E71FF10013969F /* libqr_plugin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libqr_plugin.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		90CAAA9724E71FF10013969F /* qr_plugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qr_plugin.h; sourceTree = "<group>"; };
+		90CAAA9824E71FF10013969F /* qr_plugin.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = qr_plugin.mm; sourceTree = "<group>"; };
+		AAE936A0178A8EA9BB753CEA /* Pods-qr_plugin_implementation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-qr_plugin_implementation.debug.xcconfig"; path = "Target Support Files/Pods-inapp_review_plugin/Pods-qr_plugin_implementation.debug.xcconfig"; sourceTree = "<group>"; };
+		D5F7A9D28867FD798F31BF3B /* Pods-qr_plugin_implementation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-qr_plugin_implementation.release.xcconfig"; path = "Target Support Files/Pods-inapp_review_plugin/Pods-qr_plugin_implementation.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94A1B0B2910D06DA0F4D3D3C /* Pods_plugin_template_plugin.framework in Frameworks */,
+				94A1B0B2910D06DA0F4D3D3C /* Pods_qr_plugin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,10 +58,10 @@
 		66EA7AD27171A8F93A267403 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				403D7C7BCFBA671DEF15AE95 /* Pods-plugin_template_plugin.debug.xcconfig */,
-				1A3D1E30D9DC57319C20B62B /* Pods-plugin_template_plugin.release.xcconfig */,
-				AAE936A0178A8EA9BB753CEA /* Pods-plugin_template_plugin_implementation.debug.xcconfig */,
-				D5F7A9D28867FD798F31BF3B /* Pods-plugin_template_plugin_implementation.release.xcconfig */,
+				403D7C7BCFBA671DEF15AE95 /* Pods-qr_plugin.debug.xcconfig */,
+				1A3D1E30D9DC57319C20B62B /* Pods-qr_plugin.release.xcconfig */,
+				AAE936A0178A8EA9BB753CEA /* Pods-qr_plugin_implementation.debug.xcconfig */,
+				D5F7A9D28867FD798F31BF3B /* Pods-qr_plugin_implementation.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -69,7 +69,7 @@
 		90CAAA8B24E71FF10013969F = {
 			isa = PBXGroup;
 			children = (
-				90CAAA9624E71FF10013969F /* plugin_template */,
+				90CAAA9624E71FF10013969F /* qr */,
 				90CAAA9524E71FF10013969F /* Products */,
 				90CAAAA824E72A8A0013969F /* Frameworks */,
 				66EA7AD27171A8F93A267403 /* Pods */,
@@ -79,30 +79,30 @@
 		90CAAA9524E71FF10013969F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				90CAAA9424E71FF10013969F /* libplugin_template_plugin.a */,
+				90CAAA9424E71FF10013969F /* libqr_plugin.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		90CAAA9624E71FF10013969F /* plugin_template */ = {
+		90CAAA9624E71FF10013969F /* qr */ = {
 			isa = PBXGroup;
 			children = (
-				076A67052F0F6ECC00EFE1F3 /* plugin_template_plugin_bootstrap.h */,
-				076A67062F0F6ECC00EFE1F3 /* plugin_template_plugin_bootstrap.mm */,
-				07799B7F2EEE73CC00619332 /* PluginTemplate.swift */,
-				07787D0C2EDA6C22009B6F5F /* plugin_template_logger.h */,
-				078173312EF018C00087ACA0 /* plugin_template_logger.mm */,
-				073B52C32ECF241C0063663B /* plugin_template_plugin-Bridging-Header.h */,
-				90CAAA9724E71FF10013969F /* plugin_template_plugin.h */,
-				90CAAA9824E71FF10013969F /* plugin_template_plugin.mm */,
+				076A67052F0F6ECC00EFE1F3 /* qr_plugin_bootstrap.h */,
+				076A67062F0F6ECC00EFE1F3 /* qr_plugin_bootstrap.mm */,
+				07799B7F2EEE73CC00619332 /* QR.swift */,
+				07787D0C2EDA6C22009B6F5F /* qr_logger.h */,
+				078173312EF018C00087ACA0 /* qr_logger.mm */,
+				073B52C32ECF241C0063663B /* qr_plugin-Bridging-Header.h */,
+				90CAAA9724E71FF10013969F /* qr_plugin.h */,
+				90CAAA9824E71FF10013969F /* qr_plugin.mm */,
 			);
-			path = plugin_template;
+			path = qr;
 			sourceTree = "<group>";
 		};
 		90CAAAA824E72A8A0013969F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				380C444E6383B0C8ACA7CA7D /* Pods_plugin_template_plugin.framework */,
+				380C444E6383B0C8ACA7CA7D /* Pods_qr_plugin.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -110,9 +110,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		90CAAA9324E71FF10013969F /* plugin_template_plugin */ = {
+		90CAAA9324E71FF10013969F /* qr_plugin */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 90CAAA9D24E71FF10013969F /* Build configuration list for PBXNativeTarget "plugin_template_plugin" */;
+			buildConfigurationList = 90CAAA9D24E71FF10013969F /* Build configuration list for PBXNativeTarget "qr_plugin" */;
 			buildPhases = (
 				DD9BF3CC2255FDE9321FE7D1 /* [CP] Check Pods Manifest.lock */,
 				90CAAA9024E71FF10013969F /* Sources */,
@@ -123,9 +123,9 @@
 			);
 			dependencies = (
 			);
-			name = plugin_template_plugin;
-			productName = plugin_template_plugin;
-			productReference = 90CAAA9424E71FF10013969F /* libplugin_template_plugin.a */;
+			name = qr_plugin;
+			productName = qr_plugin;
+			productReference = 90CAAA9424E71FF10013969F /* libqr_plugin.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -143,7 +143,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 90CAAA8F24E71FF10013969F /* Build configuration list for PBXProject "plugin_template_plugin" */;
+			buildConfigurationList = 90CAAA8F24E71FF10013969F /* Build configuration list for PBXProject "qr_plugin" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -156,7 +156,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				90CAAA9324E71FF10013969F /* plugin_template_plugin */,
+				90CAAA9324E71FF10013969F /* qr_plugin */,
 			);
 		};
 /* End PBXProject section */
@@ -177,7 +177,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-plugin_template_plugin-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-qr_plugin-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -191,10 +191,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				076A67072F0F6ECC00EFE1F3 /* plugin_template_plugin_bootstrap.mm in Sources */,
-				078173322EF018C10087ACA0 /* plugin_template_logger.mm in Sources */,
-				07799B802EEE73CC00619332 /* PluginTemplate.swift in Sources */,
-				90CAAA9924E71FF10013969F /* plugin_template_plugin.mm in Sources */,
+				076A67072F0F6ECC00EFE1F3 /* qr_plugin_bootstrap.mm in Sources */,
+				078173322EF018C10087ACA0 /* qr_logger.mm in Sources */,
+				07799B802EEE73CC00619332 /* QR.swift in Sources */,
+				90CAAA9924E71FF10013969F /* qr_plugin.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,7 +313,7 @@
 		};
 		90CAAA9E24E71FF10013969F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 403D7C7BCFBA671DEF15AE95 /* Pods-plugin_template_plugin.debug.xcconfig */;
+			baseConfigurationReference = 403D7C7BCFBA671DEF15AE95 /* Pods-qr_plugin.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = (
@@ -394,7 +394,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "plugin_template/plugin_template_plugin-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "qr/qr_plugin-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -403,7 +403,7 @@
 		};
 		90CAAA9F24E71FF10013969F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1A3D1E30D9DC57319C20B62B /* Pods-plugin_template_plugin.release.xcconfig */;
+			baseConfigurationReference = 1A3D1E30D9DC57319C20B62B /* Pods-qr_plugin.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = (
@@ -475,7 +475,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "plugin_template/plugin_template_plugin-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "qr/qr_plugin-Bridging-Header.h";
 				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -484,7 +484,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		90CAAA8F24E71FF10013969F /* Build configuration list for PBXProject "plugin_template_plugin" */ = {
+		90CAAA8F24E71FF10013969F /* Build configuration list for PBXProject "qr_plugin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				90CAAA9B24E71FF10013969F /* Debug */,
@@ -493,7 +493,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		90CAAA9D24E71FF10013969F /* Build configuration list for PBXNativeTarget "plugin_template_plugin" */ = {
+		90CAAA9D24E71FF10013969F /* Build configuration list for PBXNativeTarget "qr_plugin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				90CAAA9E24E71FF10013969F /* Debug */,

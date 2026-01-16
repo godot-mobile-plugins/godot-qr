@@ -4,7 +4,7 @@
 
 @tool
 @icon("icon.png")
-class_name PluginTemplate extends Node
+class_name QR extends Node
 
 signal template_ready(a_dict: Dictionary)
 
@@ -28,20 +28,20 @@ func _update_plugin() -> void:
 			_plugin_singleton = Engine.get_singleton(PLUGIN_SINGLETON_NAME)
 			_connect_signals()
 		elif not Engine.is_editor_hint():
-			PluginTemplate.log_error("%s singleton not found on this platform!" % PLUGIN_SINGLETON_NAME)
+			QR.log_error("%s singleton not found on this platform!" % PLUGIN_SINGLETON_NAME)
 
 
 func _connect_signals() -> void:
 	_plugin_singleton.connect("template_ready", _on_template_ready)
 
 
-func get_plugin_template() -> Array:
+func get_qr() -> Array:
 	var __result: Array = []
 
 	if _plugin_singleton:
-		__result = _plugin_singleton.get_plugin_template()
+		__result = _plugin_singleton.get_qr()
 	else:
-		PluginTemplate.log_error("%s plugin not initialized" % PLUGIN_SINGLETON_NAME)
+		QR.log_error("%s plugin not initialized" % PLUGIN_SINGLETON_NAME)
 
 	return __result
 

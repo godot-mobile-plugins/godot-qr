@@ -21,5 +21,5 @@ dependencyResolutionManagement {
 	}
 }
 
-rootProject.name = "godot-plugin-template-plugin"
-include(":plugin_template")
+rootProject.name = "godot-qr-plugin"
+include(":qr")

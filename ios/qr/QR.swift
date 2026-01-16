@@ -4,7 +4,7 @@
 
 import Foundation
 
-@objc public class PluginTemplate: NSObject {
+@objc public class QR: NSObject {
 
 	// TODO: callbacks to be set by the Objective-C bridge
 	@objc public var onThisHappened: ((_ info: [String: Any]) -> Void)?

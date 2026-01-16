@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2myrgf8pkumi"
-path="res://.godot/imported/plugin-template-ios.png-c5c84f4b4dab55e95105ba744eaa4765.ctex"
+uid="uid://cy0mnncxevupr"
+path="res://.godot/imported/qr-android.png-ba2248245b55ec7971d0694095f47030.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/plugin-template-ios.png"
-dest_files=["res://.godot/imported/plugin-template-ios.png-c5c84f4b4dab55e95105ba744eaa4765.ctex"]
+source_file="res://assets/qr-android.png"
+dest_files=["res://.godot/imported/qr-android.png-ba2248245b55ec7971d0694095f47030.ctex"]
 
 [params]
 
