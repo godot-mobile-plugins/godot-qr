@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3 uid="uid://daro5x6n3pd26"]
+
+[ext_resource type="Script" uid="uid://bcqb5hwnjbtob" path="res://Main.gd" id="1_wt50o"]
+[ext_resource type="Texture2D" uid="uid://cy0mnncxevupr" path="res://assets/plugin-template-android.png" id="2_qti4s"]
+[ext_resource type="Texture2D" uid="uid://b2myrgf8pkumi" path="res://assets/plugin-template-ios.png" id="3_cm0pq"]
+[ext_resource type="Script" uid="uid://x6uwstlo7n6d" path="res://addons/PluginTemplatePlugin/PluginTemplate.gd" id="4_cm0pq"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_wt50o")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MainContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MainContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TextureHBoxContainer" type="HBoxContainer" parent="CanvasLayer/MainContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 40
+
+[node name="AndroidTextureRect" type="TextureRect" parent="CanvasLayer/MainContainer/VBoxContainer/TextureHBoxContainer"]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+texture = ExtResource("2_qti4s")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="iOSTextureRect" type="TextureRect" parent="CanvasLayer/MainContainer/VBoxContainer/TextureHBoxContainer"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+texture = ExtResource("3_cm0pq")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MainContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/MainContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Plugin Template Demo"
+horizontal_alignment = 1
+
+[node name="GetButton" type="Button" parent="CanvasLayer/MainContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Get Plugin Template"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MainContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 210)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 14
+scroll_following = true
+
+[node name="PluginTemplate" type="Node" parent="."]
+script = ExtResource("4_cm0pq")
+
+[connection signal="pressed" from="CanvasLayer/MainContainer/VBoxContainer/GetButton" to="." method="_on_get_button_pressed"]
