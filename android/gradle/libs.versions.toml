@@ -7,9 +7,13 @@ compileSdk = "35"
 minSdk = "24"
 buildTools = "35.0.0"
 appcompat = "1.7.1"
+mlkit-barcode-scanning = "18.3.1"
+zxing = "3.5.4"
 
 [libraries]
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+mlkit-barcode-scanning = { group = "com.google.android.gms", name = "play-services-mlkit-barcode-scanning", version.ref = "mlkit-barcode-scanning" }
+zxing-core = { module = "com.google.zxing:core", version.ref = "zxing" }
 
 [plugins]
 android-library = { id = "com.android.library", version = "8.6.1" }

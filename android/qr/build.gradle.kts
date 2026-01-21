@@ -55,7 +55,9 @@ android {
 }
 
 val androidDependencies = arrayOf(
-	libs.androidx.appcompat.get()
+	libs.androidx.appcompat.get(),
+	libs.mlkit.barcode.scanning.get(),
+	libs.zxing.core.get()
 )
 
 dependencies {

@@ -1,12 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://daro5x6n3pd26"]
+[gd_scene load_steps=6 format=3 uid="uid://daro5x6n3pd26"]
 
 [ext_resource type="Script" uid="uid://bcqb5hwnjbtob" path="res://Main.gd" id="1_wt50o"]
-[ext_resource type="Texture2D" uid="uid://cy0mnncxevupr" path="res://assets/qr-android.png" id="2_qti4s"]
-[ext_resource type="Texture2D" uid="uid://b2myrgf8pkumi" path="res://assets/qr-ios.png" id="3_cm0pq"]
-[ext_resource type="Script" uid="uid://x6uwstlo7n6d" path="res://addons/QRPlugin/QR.gd" id="4_cm0pq"]
+[ext_resource type="Texture2D" uid="uid://ccwvfcumkwxsd" path="res://assets/qr-android.png" id="2_qti4s"]
+[ext_resource type="Texture2D" uid="uid://bhgbr1eclf27y" path="res://assets/qr-ios.png" id="3_cm0pq"]
+[ext_resource type="Script" uid="uid://duhkhf0u81e7" path="res://addons/QRPlugin/QR.gd" id="4_cm0pq"]
+[ext_resource type="Script" uid="uid://x6uwstlo7n6d" path="res://addons/NativeCameraPlugin/NativeCamera.gd" id="4_fos0i"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_wt50o")
+foreground_color = Color(0, 0.075756915, 0.49169272, 1)
+background_color = Color(1, 0.704261, 0.9895554, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -18,52 +21,143 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/margin_left = 10
+theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 25
-theme_override_constants/margin_right = 10
+theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MainContainer"]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 10
 
-[node name="TextureHBoxContainer" type="HBoxContainer" parent="CanvasLayer/MainContainer/VBoxContainer"]
+[node name="TextureHBC" type="HBoxContainer" parent="CanvasLayer/MainContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_constants/separation = 40
 
-[node name="AndroidTextureRect" type="TextureRect" parent="CanvasLayer/MainContainer/VBoxContainer/TextureHBoxContainer"]
+[node name="AndroidTextureRect" type="TextureRect" parent="CanvasLayer/MainContainer/VBoxContainer/TextureHBC"]
 custom_minimum_size = Vector2(0, 96)
 layout_mode = 2
 texture = ExtResource("2_qti4s")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="iOSTextureRect" type="TextureRect" parent="CanvasLayer/MainContainer/VBoxContainer/TextureHBoxContainer"]
+[node name="iOSTextureRect" type="TextureRect" parent="CanvasLayer/MainContainer/VBoxContainer/TextureHBC"]
+visible = false
 custom_minimum_size = Vector2(0, 128)
 layout_mode = 2
 texture = ExtResource("3_cm0pq")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MainContainer/VBoxContainer"]
+[node name="TitleHBC" type="HBoxContainer" parent="CanvasLayer/MainContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="Label" type="Label" parent="CanvasLayer/MainContainer/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/MainContainer/VBoxContainer/TitleHBC"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 24
 text = "QR Demo"
 horizontal_alignment = 1
 
-[node name="GetButton" type="Button" parent="CanvasLayer/MainContainer/VBoxContainer"]
-custom_minimum_size = Vector2(200, 50)
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer/MainContainer/VBoxContainer"]
+layout_mode = 2
+current_tab = 0
+
+[node name="Scan" type="HBoxContainer" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+metadata/_tab_index = 0
+
+[node name="ButtonsVBC" type="VBoxContainer" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Scan"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="StartButton" type="Button" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Scan/ButtonsVBC"]
+custom_minimum_size = Vector2(150, 60)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Get QR"
+disabled = true
+text = "Start Scan"
+
+[node name="StopButton" type="Button" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Scan/ButtonsVBC"]
+custom_minimum_size = Vector2(150, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+disabled = true
+text = "Stop Scan"
+
+[node name="UriLabel" type="Label" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Scan/ButtonsVBC"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+autowrap_mode = 1
+
+[node name="ScanTextureRect" type="TextureRect" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Scan"]
+custom_minimum_size = Vector2(200, 280)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Generate" type="HBoxContainer" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 5
+metadata/_tab_index = 1
+
+[node name="ButtonsVBC" type="VBoxContainer" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Generate"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="UriTextEdit" type="TextEdit" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Generate/ButtonsVBC"]
+custom_minimum_size = Vector2(150, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+placeholder_text = "Enter URI"
+
+[node name="ColorHBC" type="HBoxContainer" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Generate/ButtonsVBC"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="BgLabel" type="Label" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Generate/ButtonsVBC/ColorHBC"]
+layout_mode = 2
+text = "BG:"
+
+[node name="BgColorRect" type="ColorRect" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Generate/ButtonsVBC/ColorHBC"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+color = Color(1, 0.704261, 0.9895554, 1)
+
+[node name="FgLabel" type="Label" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Generate/ButtonsVBC/ColorHBC"]
+layout_mode = 2
+text = "FG:"
+
+[node name="FgColorRect" type="ColorRect" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Generate/ButtonsVBC/ColorHBC"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+color = Color(0, 0.075756915, 0.49169272, 1)
+
+[node name="GenerateButton" type="Button" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Generate/ButtonsVBC"]
+custom_minimum_size = Vector2(150, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Generate"
+
+[node name="GenerateTextureRect" type="TextureRect" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Generate"]
+custom_minimum_size = Vector2(200, 280)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+expand_mode = 4
+stretch_mode = 5
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MainContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 210)
@@ -72,7 +166,20 @@ size_flags_vertical = 3
 theme_override_font_sizes/normal_font_size = 14
 scroll_following = true
 
+[node name="NativeCamera" type="Node" parent="."]
+script = ExtResource("4_fos0i")
+is_grayscale = true
+metadata/_custom_type_script = "uid://x6uwstlo7n6d"
+
 [node name="QR" type="Node" parent="."]
 script = ExtResource("4_cm0pq")
+metadata/_custom_type_script = "uid://duhkhf0u81e7"
 
-[connection signal="pressed" from="CanvasLayer/MainContainer/VBoxContainer/GetButton" to="." method="_on_get_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Scan/ButtonsVBC/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Scan/ButtonsVBC/StopButton" to="." method="_on_stop_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Generate/ButtonsVBC/GenerateButton" to="." method="_on_generate_button_pressed"]
+[connection signal="camera_permission_denied" from="NativeCamera" to="." method="_on_native_camera_camera_permission_denied"]
+[connection signal="camera_permission_granted" from="NativeCamera" to="." method="_on_native_camera_camera_permission_granted"]
+[connection signal="frame_available" from="NativeCamera" to="." method="_on_native_camera_frame_available"]
+[connection signal="qr_detected" from="QR" to="." method="_on_qr_qr_detected"]
+[connection signal="qr_scan_failed" from="QR" to="." method="_on_qr_qr_scan_failed"]

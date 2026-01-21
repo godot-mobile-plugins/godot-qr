@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		072121F72F20AA8100FB3402 /* scan_error.mm in Sources */ = {isa = PBXBuildFile; fileRef = 072121F42F20AA8100FB3402 /* scan_error.mm */; };
+		072121F82F20AA8100FB3402 /* ScanResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072121F52F20AA8100FB3402 /* ScanResult.swift */; };
+		072121F92F20AA8100FB3402 /* image_info_wrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 072121F12F20AA8100FB3402 /* image_info_wrapper.mm */; };
+		072121FA2F20AA8100FB3402 /* ImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072121F22F20AA8100FB3402 /* ImageInfo.swift */; };
 		076A67072F0F6ECC00EFE1F3 /* qr_plugin_bootstrap.mm in Sources */ = {isa = PBXBuildFile; fileRef = 076A67062F0F6ECC00EFE1F3 /* qr_plugin_bootstrap.mm */; };
 		07799B802EEE73CC00619332 /* QR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07799B7F2EEE73CC00619332 /* QR.swift */; };
 		078173322EF018C10087ACA0 /* qr_logger.mm in Sources */ = {isa = PBXBuildFile; fileRef = 078173312EF018C00087ACA0 /* qr_logger.mm */; };
@@ -27,6 +31,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		072121F02F20AA8100FB3402 /* image_info_wrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = image_info_wrapper.h; sourceTree = "<group>"; };
+		072121F12F20AA8100FB3402 /* image_info_wrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = image_info_wrapper.mm; sourceTree = "<group>"; };
+		072121F22F20AA8100FB3402 /* ImageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInfo.swift; sourceTree = "<group>"; };
+		072121F32F20AA8100FB3402 /* scan_error.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = scan_error.h; sourceTree = "<group>"; };
+		072121F42F20AA8100FB3402 /* scan_error.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = scan_error.mm; sourceTree = "<group>"; };
+		072121F52F20AA8100FB3402 /* ScanResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResult.swift; sourceTree = "<group>"; };
 		073B52C32ECF241C0063663B /* qr_plugin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "qr_plugin-Bridging-Header.h"; sourceTree = "<group>"; };
 		076A67052F0F6ECC00EFE1F3 /* qr_plugin_bootstrap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qr_plugin_bootstrap.h; sourceTree = "<group>"; };
 		076A67062F0F6ECC00EFE1F3 /* qr_plugin_bootstrap.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = qr_plugin_bootstrap.mm; sourceTree = "<group>"; };
@@ -55,6 +65,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		072121F62F20AA8100FB3402 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				072121F02F20AA8100FB3402 /* image_info_wrapper.h */,
+				072121F12F20AA8100FB3402 /* image_info_wrapper.mm */,
+				072121F22F20AA8100FB3402 /* ImageInfo.swift */,
+				072121F32F20AA8100FB3402 /* scan_error.h */,
+				072121F42F20AA8100FB3402 /* scan_error.mm */,
+				072121F52F20AA8100FB3402 /* ScanResult.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		66EA7AD27171A8F93A267403 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +110,7 @@
 		90CAAA9624E71FF10013969F /* qr */ = {
 			isa = PBXGroup;
 			children = (
+				072121F62F20AA8100FB3402 /* model */,
 				076A67052F0F6ECC00EFE1F3 /* qr_plugin_bootstrap.h */,
 				076A67062F0F6ECC00EFE1F3 /* qr_plugin_bootstrap.mm */,
 				07799B7F2EEE73CC00619332 /* QR.swift */,
@@ -195,6 +219,10 @@
 				078173322EF018C10087ACA0 /* qr_logger.mm in Sources */,
 				07799B802EEE73CC00619332 /* QR.swift in Sources */,
 				90CAAA9924E71FF10013969F /* qr_plugin.mm in Sources */,
+				072121F72F20AA8100FB3402 /* scan_error.mm in Sources */,
+				072121F82F20AA8100FB3402 /* ScanResult.swift in Sources */,
+				072121F92F20AA8100FB3402 /* image_info_wrapper.mm in Sources */,
+				072121FA2F20AA8100FB3402 /* ImageInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

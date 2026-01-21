@@ -27,8 +27,8 @@ private:
 	static void _bind_methods();
 
 public:
-	Array get_qr();
-	// TODO: Declare all methods
+	Dictionary generate_qr(String uri, int size, int foreground, int background);
+	void scan_qr(Dictionary imageDict);
 
 	QRPlugin();
 	~QRPlugin();

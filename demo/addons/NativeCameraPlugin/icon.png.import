@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ckhn7ey0p5463"
-path="res://.godot/imported/icon.png-a7035d74eb43c8cebcfb878371695e13.ctex"
+path="res://.godot/imported/icon.png-66ea5f76ce48f806805dd6f7cd92a459.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/PluginTemplatePlugin/icon.png"
-dest_files=["res://.godot/imported/icon.png-a7035d74eb43c8cebcfb878371695e13.ctex"]
+source_file="res://addons/NativeCameraPlugin/icon.png"
+dest_files=["res://.godot/imported/icon.png-66ea5f76ce48f806805dd6f7cd92a459.ctex"]
 
 [params]
 

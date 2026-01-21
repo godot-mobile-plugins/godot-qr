@@ -6,15 +6,23 @@
 
 ---
 
-
 # <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-qr/main/addon/icon.png" width="24"> Godot QR Plugin
 
-A Godot plugin that provides a unified GDScript interface for getting information on mobile device connections on **Android** and **iOS**.
+Godot plugin that provides a unified GDScript interface for generating and scanning QR codes on **Android** and **iOS** using native platform implementations.
+
+The plugin supports:
+
+- Generating QR code images and textures
+- Scanning QR codes from images
+- Receiving scan results and errors via signals
 
 **Key Features:**
-- Get information about all available connections on a mobile device
-- Know when a new connection is established (signal)
-- Know when a connection is lost (signal)
+- Unified GDScript API for Android & iOS
+- Generate QR codes as Image or ImageTexture
+- Custom foreground and background colors
+- Scan QR codes from Image data
+- Signal-based scan results and error handling
+- Native platform performance
 
 ---
 
@@ -69,50 +77,78 @@ Steps:
 
 
 ## <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-qr/main/addon/icon.png" width="20"> Usage
-Add `QR` node to your main scene or an autoload global scene.
+Add `QR` node to your main scene or register it as an AutoLoad singleton.
 
-- use the `QR` node's `get_qr()` method to get information on all available connections
-- connect `QR` node signals
-	- `connection_established(a_connection_info: ConnectionInfo)`
-	- `connection_lost(a_connection_info: ConnectionInfo)`
-
-Example usage:
-```
+Generating a QR Code:
+```gdscript
 @onready var qr := $QR
 
 func _ready():
-	qr.connection_established.connect(_on_connection_established)
-	qr.connection_lost.connect(_on_connection_lost)
-
-	var connections: Array[ConnectionInfo] = qr.get_qr()
-	for info in connections:
-		print("Connection type: %s -- is_active: %s -- is_metered: %s" % [
-				ConnectionInfo.ConnectionType.keys()[info.get_connection_type()],
-				str(info.is_active()),
-				str(info.is_metered())])
-
-func _on_connection_established(info: ConnectionInfo):
-	print("Connection established:", info.connection_type)
-
-func _on_connection_lost(info: ConnectionInfo):
-	print("Connection lost:", info.connection_type)
+	var img := qr.generate_qr_image(
+		"https://godotengine.org",
+		512,
+		Color.BLACK,
+		Color.WHITE
+	)
+	$TextureRect.texture = ImageTexture.create_from_image(img)
 ```
+
+Generating a Texture directly:
+```gdscript
+var texture := qr.generate_qr_texture("Hello from Godot!")
+$Sprite2D.texture = texture
+```
+
+Scanning a QR Code from an Image:
+```gdscript
+@onready var qr := $QR
+
+func _ready():
+	qr.qr_detected.connect(_on_qr_qr_detected)
+	qr.qr_scan_failed.connect(_on_qr_qr_scan_failed)
+	qr.scan_qr_image(my_image)
+
+
+func _on_qr_qr_detected(data: String) -> void:
+	print("QR detected: %s" % data)
+
+
+func _on_qr_qr_scan_failed(error: ScanError) -> void:
+	print("QR scan failed due to '%s'" % error.get_description())
+```
+
+### <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-qr/main/addon/icon.png" width="20"> Scanning live camera feed
+Combine the QR Plugin with the [Native Camera Plugin](https://github.com/godot-mobile-plugins/godot-native-camera) to scan QR codes directly from your device’s live camera feed. See the demo app for a working example.
 
 ---
 
 <a name="signals"></a>
 
 ## <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-qr/main/addon/icon.png" width="20"> Signals
-- register listeners to the following signals of the `QR` node:
-	- `connection_established(a_connection_info: ConnectionInfo)`
-	- `connection_lost(a_connection_info: ConnectionInfo)`
+
+- `qr_detected(data: String)` - Emitted when a QR code has been successfully scanned along with the scanned data
+- `qr_scan_failed(error: ScanError)` - Emitted when scanning a QR code has failed
+
 
 ---
 
 <a name="methods"></a>
 
 ## <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-qr/main/addon/icon.png" width="20"> Methods
-- `get_qr() -> Array[ConnectionInfo]` - returns an array of `ConnectionInfo` objects
+
+- `generate_qr_image(uri, size, foreground, background) -> Image`
+	- Generates a QR code as a Godot Image.
+	- `uri: String` – Data to encode
+	- `size: int` – Output image size in pixels (default: 512)
+	- `foreground: Color` – QR foreground color
+	- `background: Color` – QR background color
+
+- `generate_qr_texture(uri, size, foreground, background) -> ImageTexture`
+	- Same as `generate_qr_image()`, but returns an ImageTexture.
+
+- `scan_qr_image(image: Image) -> void`
+	- Scans a QR code from a Godot Image.
+	- Results are returned asynchronously via signals.
 
 ---
 
@@ -120,12 +156,31 @@ func _on_connection_lost(info: ConnectionInfo):
 
 ## <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-qr/main/addon/icon.png" width="20"> Classes
 
-### <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-qr/main/addon/icon.png" width="16"> ConnectionInfo
-- Encapsulates network connection data that is provided by the mobile OS.
-- Properties:
-	- `connection_type`: type of network connection: WIFI, Cellular, Ethernet, Bluetooth, VPN, Loopback, or Unknown
-	- `is_active`: whether the connection is actively being used
-	- `is_metered`: whether the connection has a data limit that tracks usage
+### <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-qr/main/addon/icon.png" width="16"> ImageInfo
+
+Internal data wrapper used for transferring image data between Godot and native code.
+
+Properties (internal):
+- `buffer: PackedByteArray`
+- `width: int`
+- `height: int`
+- `format: Image.Format`
+- `has_mipmaps: bool`
+
+### <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-qr/main/addon/icon.png" width="16"> ScanError
+
+Encapsulates QR scanning errors.
+
+Error Codes:
+- `NONE`
+- `INVALID_IMAGE`
+- `NO_CODE_DETECTED`
+- `SCANNER_FAILURE`
+- `INTERNAL_ERROR`
+
+Methods:
+- `get_code() -> ScanError.Code`
+- `get_description() -> String`
 
 ---
 
@@ -168,8 +223,10 @@ func _on_connection_lost(info: ConnectionInfo):
 | [Deeplink](https://github.com/godot-mobile-plugins/godot-deeplink) | ✅ | ✅ | ✅ | ✅ | MIT |
 | [Share](https://github.com/godot-mobile-plugins/godot-share) | ✅ | ✅ | ✅ | ✅ | MIT |
 | [In-App Review](https://github.com/godot-mobile-plugins/godot-inapp-review) | ✅ | ✅ | ✅ | ✅ | MIT |
-| [QR](https://github.com/godot-mobile-plugins/godot-qr) | ✅ | ✅ | ✅ | ✅ | MIT |
+| [Native Camera](https://github.com/godot-mobile-plugins/godot-native-camera) | ✅ | ✅ | ✅ | ✅ | MIT |
+| [Connection State](https://github.com/godot-mobile-plugins/godot-connection-state) | ✅ | ✅ | ✅ | ✅ | MIT |
 | [OAuth 2.0](https://github.com/godot-mobile-plugins/godot-oauth2) | ✅ | ✅ | ✅ | ✅ | MIT |
+| [QR](https://github.com/godot-mobile-plugins/godot-qr) | ✅ | ✅ | ✅ | ✅ | MIT |
 
 ---
 
@@ -177,7 +234,7 @@ func _on_connection_lost(info: ConnectionInfo):
 
 # <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-qr/main/addon/icon.png" width="24"> Credits
 
-Developed by [Your Name](https://github.com/your-username)
+Developed by [Cengiz](https://github.com/cengiz-pz)
 
 Original repository: [Godot QR Plugin](https://github.com/godot-mobile-plugins/godot-qr)
 

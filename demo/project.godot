@@ -29,7 +29,7 @@ window/handheld/orientation=1
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/QRPlugin/plugin.cfg")
+enabled=PackedStringArray("res://addons/NativeCameraPlugin/plugin.cfg", "res://addons/QRPlugin/plugin.cfg")
 
 [rendering]
 
