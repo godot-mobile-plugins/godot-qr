@@ -16,10 +16,14 @@ dependencyResolutionManagement {
 		google()
 		mavenCentral()
 		flatDir {
-			dirs("${rootDir}/libs")
+			dirs("${rootDir}/../android/libs")
 		}
 	}
 }
 
 rootProject.name = "godot-qr-plugin"
-include(":qr")
+include(":android")
+include(":addon")
+
+project(":android").projectDir = file("../android")
+project(":addon").projectDir = file("../addon")
