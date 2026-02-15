@@ -27,6 +27,8 @@ The plugin supports:
 ---
 
 ## <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-qr/main/addon/src/icon.png" width="20"> Table of Contents
+
+- [Demo](#demo)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Signals](#signals)
@@ -37,6 +39,18 @@ The plugin supports:
 - [All Plugins](#all-plugins)
 - [Credits](#credits)
 - [Contributing](#contributing)
+
+---
+
+<a name="demo"></a>
+
+## <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-qr/main/addon/src/icon.png" width="20"> Demo
+
+Try the **demo app** located in the `demo` directory.
+
+<p align="center">
+	<img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-qr/main/docs/assets/demo_screenshot_ios_111.gif" width="252">
+</p>
 
 ---
 
@@ -229,6 +243,7 @@ Methods:
 | [Connection State](https://github.com/godot-mobile-plugins/godot-connection-state) | ✅ | ✅ | ✅ | ✅ | MIT |
 | [OAuth 2.0](https://github.com/godot-mobile-plugins/godot-oauth2) | ✅ | ✅ | ✅ | ✅ | MIT |
 | [QR](https://github.com/godot-mobile-plugins/godot-qr) | ✅ | ✅ | ✅ | ✅ | MIT |
+| [Firebase](https://github.com/godot-mobile-plugins/godot-firebase) | ✅ | ✅ | ✅ | ✅ | MIT |
 
 ---
 

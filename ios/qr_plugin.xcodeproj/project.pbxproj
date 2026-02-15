@@ -3,18 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		072121F72F20AA8100FB3402 /* scan_error.mm in Sources */ = {isa = PBXBuildFile; fileRef = 072121F42F20AA8100FB3402 /* scan_error.mm */; };
-		072121F82F20AA8100FB3402 /* ScanResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072121F52F20AA8100FB3402 /* ScanResult.swift */; };
-		072121F92F20AA8100FB3402 /* image_info_wrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 072121F12F20AA8100FB3402 /* image_info_wrapper.mm */; };
-		072121FA2F20AA8100FB3402 /* ImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072121F22F20AA8100FB3402 /* ImageInfo.swift */; };
-		076A67072F0F6ECC00EFE1F3 /* qr_plugin_bootstrap.mm in Sources */ = {isa = PBXBuildFile; fileRef = 076A67062F0F6ECC00EFE1F3 /* qr_plugin_bootstrap.mm */; };
-		07799B802EEE73CC00619332 /* QR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07799B7F2EEE73CC00619332 /* QR.swift */; };
-		078173322EF018C10087ACA0 /* qr_logger.mm in Sources */ = {isa = PBXBuildFile; fileRef = 078173312EF018C00087ACA0 /* qr_logger.mm */; };
-		90CAAA9924E71FF10013969F /* qr_plugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 90CAAA9824E71FF10013969F /* qr_plugin.mm */; };
+		07DF21972F3EE15300E2725C /* ImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF21892F3EE15300E2725C /* ImageInfo.swift */; };
+		07DF21982F3EE15300E2725C /* qr_plugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07DF21922F3EE15300E2725C /* qr_plugin.mm */; };
+		07DF21992F3EE15300E2725C /* qr_plugin_bootstrap.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07DF21942F3EE15300E2725C /* qr_plugin_bootstrap.mm */; };
+		07DF219A2F3EE15300E2725C /* QR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF218E2F3EE15300E2725C /* QR.swift */; };
+		07DF219B2F3EE15300E2725C /* scan_error.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07DF218B2F3EE15300E2725C /* scan_error.mm */; };
+		07DF219C2F3EE15300E2725C /* qr_logger.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07DF21902F3EE15300E2725C /* qr_logger.mm */; };
+		07DF219D2F3EE15300E2725C /* image_info_wrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07DF21882F3EE15300E2725C /* image_info_wrapper.mm */; };
+		07DF219E2F3EE15300E2725C /* ScanResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF218C2F3EE15300E2725C /* ScanResult.swift */; };
 		94A1B0B2910D06DA0F4D3D3C /* Pods_qr_plugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 380C444E6383B0C8ACA7CA7D /* Pods_qr_plugin.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,26 +31,24 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		072121F02F20AA8100FB3402 /* image_info_wrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = image_info_wrapper.h; sourceTree = "<group>"; };
-		072121F12F20AA8100FB3402 /* image_info_wrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = image_info_wrapper.mm; sourceTree = "<group>"; };
-		072121F22F20AA8100FB3402 /* ImageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInfo.swift; sourceTree = "<group>"; };
-		072121F32F20AA8100FB3402 /* scan_error.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = scan_error.h; sourceTree = "<group>"; };
-		072121F42F20AA8100FB3402 /* scan_error.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = scan_error.mm; sourceTree = "<group>"; };
-		072121F52F20AA8100FB3402 /* ScanResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResult.swift; sourceTree = "<group>"; };
-		073B52C32ECF241C0063663B /* qr_plugin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "qr_plugin-Bridging-Header.h"; sourceTree = "<group>"; };
-		076A67052F0F6ECC00EFE1F3 /* qr_plugin_bootstrap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qr_plugin_bootstrap.h; sourceTree = "<group>"; };
-		076A67062F0F6ECC00EFE1F3 /* qr_plugin_bootstrap.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = qr_plugin_bootstrap.mm; sourceTree = "<group>"; };
-		07787D0C2EDA6C22009B6F5F /* qr_logger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qr_logger.h; sourceTree = "<group>"; };
-		07799B7F2EEE73CC00619332 /* QR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QR.swift; sourceTree = "<group>"; };
-		078173312EF018C00087ACA0 /* qr_logger.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = qr_logger.mm; sourceTree = "<group>"; };
+		07DF21872F3EE15300E2725C /* image_info_wrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = image_info_wrapper.h; sourceTree = "<group>"; };
+		07DF21882F3EE15300E2725C /* image_info_wrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = image_info_wrapper.mm; sourceTree = "<group>"; };
+		07DF21892F3EE15300E2725C /* ImageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInfo.swift; sourceTree = "<group>"; };
+		07DF218A2F3EE15300E2725C /* scan_error.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = scan_error.h; sourceTree = "<group>"; };
+		07DF218B2F3EE15300E2725C /* scan_error.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = scan_error.mm; sourceTree = "<group>"; };
+		07DF218C2F3EE15300E2725C /* ScanResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResult.swift; sourceTree = "<group>"; };
+		07DF218E2F3EE15300E2725C /* QR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QR.swift; sourceTree = "<group>"; };
+		07DF218F2F3EE15300E2725C /* qr_logger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qr_logger.h; sourceTree = "<group>"; };
+		07DF21902F3EE15300E2725C /* qr_logger.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = qr_logger.mm; sourceTree = "<group>"; };
+		07DF21912F3EE15300E2725C /* qr_plugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qr_plugin.h; sourceTree = "<group>"; };
+		07DF21922F3EE15300E2725C /* qr_plugin.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = qr_plugin.mm; sourceTree = "<group>"; };
+		07DF21932F3EE15300E2725C /* qr_plugin_bootstrap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qr_plugin_bootstrap.h; sourceTree = "<group>"; };
+		07DF21942F3EE15300E2725C /* qr_plugin_bootstrap.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = qr_plugin_bootstrap.mm; sourceTree = "<group>"; };
+		07DF21952F3EE15300E2725C /* qr_plugin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "qr_plugin-Bridging-Header.h"; sourceTree = "<group>"; };
 		1A3D1E30D9DC57319C20B62B /* Pods-qr_plugin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-qr_plugin.release.xcconfig"; path = "Target Support Files/Pods-qr_plugin/Pods-qr_plugin.release.xcconfig"; sourceTree = "<group>"; };
 		380C444E6383B0C8ACA7CA7D /* Pods_qr_plugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_qr_plugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		403D7C7BCFBA671DEF15AE95 /* Pods-qr_plugin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-qr_plugin.debug.xcconfig"; path = "Target Support Files/Pods-qr_plugin/Pods-qr_plugin.debug.xcconfig"; sourceTree = "<group>"; };
 		90CAAA9424E71FF10013969F /* libqr_plugin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libqr_plugin.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		90CAAA9724E71FF10013969F /* qr_plugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qr_plugin.h; sourceTree = "<group>"; };
-		90CAAA9824E71FF10013969F /* qr_plugin.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = qr_plugin.mm; sourceTree = "<group>"; };
-		AAE936A0178A8EA9BB753CEA /* Pods-qr_plugin_implementation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-qr_plugin_implementation.debug.xcconfig"; path = "Target Support Files/Pods-inapp_review_plugin/Pods-qr_plugin_implementation.debug.xcconfig"; sourceTree = "<group>"; };
-		D5F7A9D28867FD798F31BF3B /* Pods-qr_plugin_implementation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-qr_plugin_implementation.release.xcconfig"; path = "Target Support Files/Pods-inapp_review_plugin/Pods-qr_plugin_implementation.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,17 +63,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		072121F62F20AA8100FB3402 /* model */ = {
+		07DF218D2F3EE15300E2725C /* model */ = {
 			isa = PBXGroup;
 			children = (
-				072121F02F20AA8100FB3402 /* image_info_wrapper.h */,
-				072121F12F20AA8100FB3402 /* image_info_wrapper.mm */,
-				072121F22F20AA8100FB3402 /* ImageInfo.swift */,
-				072121F32F20AA8100FB3402 /* scan_error.h */,
-				072121F42F20AA8100FB3402 /* scan_error.mm */,
-				072121F52F20AA8100FB3402 /* ScanResult.swift */,
+				07DF21872F3EE15300E2725C /* image_info_wrapper.h */,
+				07DF21882F3EE15300E2725C /* image_info_wrapper.mm */,
+				07DF21892F3EE15300E2725C /* ImageInfo.swift */,
+				07DF218A2F3EE15300E2725C /* scan_error.h */,
+				07DF218B2F3EE15300E2725C /* scan_error.mm */,
+				07DF218C2F3EE15300E2725C /* ScanResult.swift */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		07DF21962F3EE15300E2725C /* src */ = {
+			isa = PBXGroup;
+			children = (
+				07DF218D2F3EE15300E2725C /* model */,
+				07DF218E2F3EE15300E2725C /* QR.swift */,
+				07DF218F2F3EE15300E2725C /* qr_logger.h */,
+				07DF21902F3EE15300E2725C /* qr_logger.mm */,
+				07DF21912F3EE15300E2725C /* qr_plugin.h */,
+				07DF21922F3EE15300E2725C /* qr_plugin.mm */,
+				07DF21932F3EE15300E2725C /* qr_plugin_bootstrap.h */,
+				07DF21942F3EE15300E2725C /* qr_plugin_bootstrap.mm */,
+				07DF21952F3EE15300E2725C /* qr_plugin-Bridging-Header.h */,
+			);
+			path = src;
 			sourceTree = "<group>";
 		};
 		66EA7AD27171A8F93A267403 /* Pods */ = {
@@ -83,8 +97,6 @@
 			children = (
 				403D7C7BCFBA671DEF15AE95 /* Pods-qr_plugin.debug.xcconfig */,
 				1A3D1E30D9DC57319C20B62B /* Pods-qr_plugin.release.xcconfig */,
-				AAE936A0178A8EA9BB753CEA /* Pods-qr_plugin_implementation.debug.xcconfig */,
-				D5F7A9D28867FD798F31BF3B /* Pods-qr_plugin_implementation.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -92,7 +104,7 @@
 		90CAAA8B24E71FF10013969F = {
 			isa = PBXGroup;
 			children = (
-				90CAAA9624E71FF10013969F /* qr */,
+				07DF21962F3EE15300E2725C /* src */,
 				90CAAA9524E71FF10013969F /* Products */,
 				90CAAAA824E72A8A0013969F /* Frameworks */,
 				66EA7AD27171A8F93A267403 /* Pods */,
@@ -105,22 +117,6 @@
 				90CAAA9424E71FF10013969F /* libqr_plugin.a */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		90CAAA9624E71FF10013969F /* qr */ = {
-			isa = PBXGroup;
-			children = (
-				072121F62F20AA8100FB3402 /* model */,
-				076A67052F0F6ECC00EFE1F3 /* qr_plugin_bootstrap.h */,
-				076A67062F0F6ECC00EFE1F3 /* qr_plugin_bootstrap.mm */,
-				07799B7F2EEE73CC00619332 /* QR.swift */,
-				07787D0C2EDA6C22009B6F5F /* qr_logger.h */,
-				078173312EF018C00087ACA0 /* qr_logger.mm */,
-				073B52C32ECF241C0063663B /* qr_plugin-Bridging-Header.h */,
-				90CAAA9724E71FF10013969F /* qr_plugin.h */,
-				90CAAA9824E71FF10013969F /* qr_plugin.mm */,
-			);
-			path = qr;
 			sourceTree = "<group>";
 		};
 		90CAAAA824E72A8A0013969F /* Frameworks */ = {
@@ -215,14 +211,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				076A67072F0F6ECC00EFE1F3 /* qr_plugin_bootstrap.mm in Sources */,
-				078173322EF018C10087ACA0 /* qr_logger.mm in Sources */,
-				07799B802EEE73CC00619332 /* QR.swift in Sources */,
-				90CAAA9924E71FF10013969F /* qr_plugin.mm in Sources */,
-				072121F72F20AA8100FB3402 /* scan_error.mm in Sources */,
-				072121F82F20AA8100FB3402 /* ScanResult.swift in Sources */,
-				072121F92F20AA8100FB3402 /* image_info_wrapper.mm in Sources */,
-				072121FA2F20AA8100FB3402 /* ImageInfo.swift in Sources */,
+				07DF21972F3EE15300E2725C /* ImageInfo.swift in Sources */,
+				07DF21982F3EE15300E2725C /* qr_plugin.mm in Sources */,
+				07DF21992F3EE15300E2725C /* qr_plugin_bootstrap.mm in Sources */,
+				07DF219A2F3EE15300E2725C /* QR.swift in Sources */,
+				07DF219B2F3EE15300E2725C /* scan_error.mm in Sources */,
+				07DF219C2F3EE15300E2725C /* qr_logger.mm in Sources */,
+				07DF219D2F3EE15300E2725C /* image_info_wrapper.mm in Sources */,
+				07DF219E2F3EE15300E2725C /* ScanResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,9 +405,7 @@
 					"-isystem",
 					"$(SRCROOT)/godot/platform/ios",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "src/qr_plugin-Bridging-Header.h";
@@ -482,9 +476,7 @@
 					"-isystem",
 					"$(SRCROOT)/godot/platform/ios",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "src/qr_plugin-Bridging-Header.h";

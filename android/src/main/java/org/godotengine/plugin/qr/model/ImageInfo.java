@@ -41,32 +41,32 @@ public class ImageInfo {
 
 
 	public int getWidth() {
-		return _data.containsKey(DATA_WIDTH_PROPERTY) ? (int) _data.get(DATA_WIDTH_PROPERTY) : -1;
+		return _data.containsKey(DATA_WIDTH_PROPERTY) ? toInt(_data.get(DATA_WIDTH_PROPERTY)) : -1;
 	}
 
 
 	public void setWidth(int width) {
-		_data.put(DATA_WIDTH_PROPERTY, width);
+		_data.put(DATA_WIDTH_PROPERTY, (long) width);
 	}
 
 
 	public int getHeight() {
-		return _data.containsKey(DATA_HEIGHT_PROPERTY) ? (int) _data.get(DATA_HEIGHT_PROPERTY) : -1;
+		return _data.containsKey(DATA_HEIGHT_PROPERTY) ? toInt(_data.get(DATA_HEIGHT_PROPERTY)) : -1;
 	}
 
 
 	public void setHeight(int height) {
-		_data.put(DATA_HEIGHT_PROPERTY, height);
+		_data.put(DATA_HEIGHT_PROPERTY, (long) height);
 	}
 
 
 	public int getFormat() {
-		return _data.containsKey(DATA_FORMAT_PROPERTY) ? (int) _data.get(DATA_FORMAT_PROPERTY) : 3;
+		return _data.containsKey(DATA_FORMAT_PROPERTY) ? toInt(_data.get(DATA_FORMAT_PROPERTY)) : 3;
 	}
 
 
 	public void setFormat(int format) {
-		_data.put(DATA_FORMAT_PROPERTY, format);
+		_data.put(DATA_FORMAT_PROPERTY, (long) format);
 	}
 
 
@@ -82,5 +82,10 @@ public class ImageInfo {
 
 	public Dictionary getRawData() {
 		return _data;
+	}
+	
+
+	private int toInt(Object godotInt) {
+		return ((Long) godotInt).intValue();
 	}
 }
