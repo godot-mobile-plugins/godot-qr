@@ -7,22 +7,19 @@
 
 #import <Foundation/Foundation.h>
 
-#include "core/object/object.h"
 #include "core/object/class_db.h"
-
+#include "core/object/object.h"
 
 @class QR;
 
-
 extern const String TEMPLATE_READY_SIGNAL;
 // TODO: Declare all signals
-
 
 class QRPlugin : public Object {
 	GDCLASS(QRPlugin, Object);
 
 private:
-	static QRPlugin* instance; // Singleton instance
+	static QRPlugin *instance; // Singleton instance
 
 	static void _bind_methods();
 

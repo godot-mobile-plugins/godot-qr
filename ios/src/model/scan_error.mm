@@ -4,14 +4,12 @@
 
 #import "scan_error.h"
 
-
 static String const kCodeProperty = "code";
 static String const kDescriptionProperty = "description";
 
-
 @implementation ScanError
 
-- (instancetype) initWithScanResult:(ScanResult *)scanResult {
+- (instancetype)initWithScanResult:(ScanResult *)scanResult {
 	self = [super init];
 	if (self) {
 		_scanResult = scanResult;
@@ -19,10 +17,10 @@ static String const kDescriptionProperty = "description";
 	return self;
 }
 
-- (Dictionary) buildRawData {
+- (Dictionary)buildRawData {
 	Dictionary dict = Dictionary();
 
-	dict[kCodeProperty] = (int) self.scanResult.code;
+	dict[kCodeProperty] = (int)self.scanResult.code;
 	dict[kDescriptionProperty] = [self.scanResult.resultDescription UTF8String];
 
 	return dict;

@@ -11,18 +11,17 @@
 
 #import "qr_plugin-Swift.h"
 
-
 @interface ScanError : NSObject
 
-@property (nonatomic, strong) ScanResult *scanResult;
+@property(nonatomic, strong) ScanResult *scanResult;
 
-- (instancetype) initWithScanResult:(ScanResult *)scanResult;
+- (instancetype)initWithScanResult:(ScanResult *)scanResult;
 
 /**
  * Builds a Godot-compatible Dictionary containing the scan result data
  * @return A Dictionary object with the scan error info
  */
-- (Dictionary) buildRawData;
+- (Dictionary)buildRawData;
 
 @end
 

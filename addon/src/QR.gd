@@ -38,12 +38,8 @@ func _connect_signals() -> void:
 
 
 func generate_qr_image(
-	a_uri: String,
-	a_size: int = 512,
-	a_foreground: Color = Color.BLACK,
-	a_background: Color = Color.WHITE
+	a_uri: String, a_size: int = 512, a_foreground: Color = Color.BLACK, a_background: Color = Color.WHITE
 ) -> Image:
-
 	var __img: Image
 
 	if _plugin_singleton:
@@ -70,18 +66,9 @@ func generate_qr_image(
 
 
 func generate_qr_texture(
-	a_uri: String,
-	a_size: int = 512,
-	a_foreground: Color = Color.BLACK,
-	a_background: Color = Color.WHITE
+	a_uri: String, a_size: int = 512, a_foreground: Color = Color.BLACK, a_background: Color = Color.WHITE
 ) -> ImageTexture:
-
-	var img := generate_qr_image(
-		a_uri,
-		a_size,
-		a_foreground,
-		a_background
-	)
+	var img := generate_qr_image(a_uri, a_size, a_foreground, a_background)
 
 	return ImageTexture.create_from_image(img)
 

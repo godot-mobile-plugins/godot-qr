@@ -1,19 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://daro5x6n3pd26"]
+[gd_scene format=3 uid="uid://daro5x6n3pd26"]
 
 [ext_resource type="Script" uid="uid://bcqb5hwnjbtob" path="res://Main.gd" id="1_wt50o"]
 [ext_resource type="Texture2D" uid="uid://ccwvfcumkwxsd" path="res://assets/qr-android.png" id="2_qti4s"]
 [ext_resource type="Texture2D" uid="uid://bhgbr1eclf27y" path="res://assets/qr-ios.png" id="3_cm0pq"]
-[ext_resource type="Script" uid="uid://duhkhf0u81e7" path="res://addons/QRPlugin/QR.gd" id="4_cm0pq"]
-[ext_resource type="Script" uid="uid://x6uwstlo7n6d" path="res://addons/NativeCameraPlugin/NativeCamera.gd" id="4_fos0i"]
+[ext_resource type="Script" path="res://addons/QRPlugin/QR.gd" id="4_cm0pq"]
+[ext_resource type="Script" uid="uid://bkegxtuw8lpt8" path="res://addons/NativeCameraPlugin/NativeCamera.gd" id="4_fos0i"]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" unique_id=369831344]
 script = ExtResource("1_wt50o")
 foreground_color = Color(0, 0.075756915, 0.49169272, 1)
 background_color = Color(1, 0.704261, 0.9895554, 1)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=579047303]
 
-[node name="MainContainer" type="MarginContainer" parent="CanvasLayer"]
+[node name="MainContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1918629456]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -26,25 +26,27 @@ theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MainContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MainContainer" unique_id=1020758017]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="TextureHBC" type="HBoxContainer" parent="CanvasLayer/MainContainer/VBoxContainer"]
+[node name="TextureHBC" type="HBoxContainer" parent="CanvasLayer/MainContainer/VBoxContainer" unique_id=351736884]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_constants/separation = 40
 
-[node name="AndroidTextureRect" type="TextureRect" parent="CanvasLayer/MainContainer/VBoxContainer/TextureHBC"]
+[node name="AndroidTextureRect" type="TextureRect" parent="CanvasLayer/MainContainer/VBoxContainer/TextureHBC" unique_id=824483933]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 96)
 layout_mode = 2
 texture = ExtResource("2_qti4s")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="iOSTextureRect" type="TextureRect" parent="CanvasLayer/MainContainer/VBoxContainer/TextureHBC"]
+[node name="iOSTextureRect" type="TextureRect" parent="CanvasLayer/MainContainer/VBoxContainer/TextureHBC" unique_id=402921631]
+unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(0, 128)
 layout_mode = 2
@@ -52,52 +54,56 @@ texture = ExtResource("3_cm0pq")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="TitleHBC" type="HBoxContainer" parent="CanvasLayer/MainContainer/VBoxContainer"]
+[node name="TitleHBC" type="HBoxContainer" parent="CanvasLayer/MainContainer/VBoxContainer" unique_id=2124761363]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="Label" type="Label" parent="CanvasLayer/MainContainer/VBoxContainer/TitleHBC"]
+[node name="Label" type="Label" parent="CanvasLayer/MainContainer/VBoxContainer/TitleHBC" unique_id=224633685]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 24
 text = "QR Demo"
 horizontal_alignment = 1
 
-[node name="TabContainer" type="TabContainer" parent="CanvasLayer/MainContainer/VBoxContainer"]
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer/MainContainer/VBoxContainer" unique_id=598395773]
 layout_mode = 2
 current_tab = 0
 
-[node name="Scan" type="HBoxContainer" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer"]
+[node name="Scan" type="HBoxContainer" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer" unique_id=350724654]
 layout_mode = 2
 theme_override_constants/separation = 5
 metadata/_tab_index = 0
 
-[node name="ButtonsVBC" type="VBoxContainer" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Scan"]
+[node name="ButtonsVBC" type="VBoxContainer" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Scan" unique_id=1763628581]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
 theme_override_constants/separation = 15
 
-[node name="StartButton" type="Button" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Scan/ButtonsVBC"]
+[node name="StartButton" type="Button" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Scan/ButtonsVBC" unique_id=69169226]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 disabled = true
 text = "Start Scan"
 
-[node name="StopButton" type="Button" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Scan/ButtonsVBC"]
+[node name="StopButton" type="Button" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Scan/ButtonsVBC" unique_id=1536161905]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 disabled = true
 text = "Stop Scan"
 
-[node name="UriLabel" type="Label" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Scan/ButtonsVBC"]
+[node name="UriLabel" type="Label" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Scan/ButtonsVBC" unique_id=1632404993]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 autowrap_mode = 1
 
-[node name="ScanTextureRect" type="TextureRect" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Scan"]
+[node name="ScanTextureRect" type="TextureRect" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Scan" unique_id=1503197650]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 280)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -105,53 +111,58 @@ size_flags_vertical = 0
 expand_mode = 4
 stretch_mode = 5
 
-[node name="Generate" type="HBoxContainer" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer"]
+[node name="Generate" type="HBoxContainer" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer" unique_id=807036760]
 visible = false
 layout_mode = 2
 theme_override_constants/separation = 5
 metadata/_tab_index = 1
 
-[node name="ButtonsVBC" type="VBoxContainer" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Generate"]
+[node name="ButtonsVBC" type="VBoxContainer" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Generate" unique_id=1915802693]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
 theme_override_constants/separation = 15
 
-[node name="UriTextEdit" type="TextEdit" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Generate/ButtonsVBC"]
+[node name="UriTextEdit" type="TextEdit" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Generate/ButtonsVBC" unique_id=2052389214]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 placeholder_text = "Enter URI"
 
-[node name="ColorHBC" type="HBoxContainer" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Generate/ButtonsVBC"]
+[node name="ColorHBC" type="HBoxContainer" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Generate/ButtonsVBC" unique_id=852149792]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="BgLabel" type="Label" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Generate/ButtonsVBC/ColorHBC"]
+[node name="BgLabel" type="Label" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Generate/ButtonsVBC/ColorHBC" unique_id=1450944231]
 layout_mode = 2
 text = "BG:"
 
-[node name="BgColorRect" type="ColorRect" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Generate/ButtonsVBC/ColorHBC"]
+[node name="BgColorRect" type="ColorRect" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Generate/ButtonsVBC/ColorHBC" unique_id=1798214895]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(25, 25)
 layout_mode = 2
 color = Color(1, 0.704261, 0.9895554, 1)
 
-[node name="FgLabel" type="Label" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Generate/ButtonsVBC/ColorHBC"]
+[node name="FgLabel" type="Label" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Generate/ButtonsVBC/ColorHBC" unique_id=1011401404]
 layout_mode = 2
 text = "FG:"
 
-[node name="FgColorRect" type="ColorRect" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Generate/ButtonsVBC/ColorHBC"]
+[node name="FgColorRect" type="ColorRect" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Generate/ButtonsVBC/ColorHBC" unique_id=1407523641]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(25, 25)
 layout_mode = 2
 color = Color(0, 0.075756915, 0.49169272, 1)
 
-[node name="GenerateButton" type="Button" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Generate/ButtonsVBC"]
+[node name="GenerateButton" type="Button" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Generate/ButtonsVBC" unique_id=274773234]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Generate"
 
-[node name="GenerateTextureRect" type="TextureRect" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Generate"]
+[node name="GenerateTextureRect" type="TextureRect" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Generate" unique_id=1912378386]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 280)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -159,21 +170,20 @@ size_flags_vertical = 0
 expand_mode = 4
 stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MainContainer/VBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MainContainer/VBoxContainer" unique_id=960279031]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 210)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/normal_font_size = 14
 scroll_following = true
 
-[node name="NativeCamera" type="Node" parent="."]
+[node name="NativeCamera" type="Node" parent="." unique_id=1000229213]
 script = ExtResource("4_fos0i")
 is_grayscale = true
-metadata/_custom_type_script = "uid://x6uwstlo7n6d"
 
-[node name="QR" type="Node" parent="."]
+[node name="QR" type="Node" parent="." unique_id=911153649]
 script = ExtResource("4_cm0pq")
-metadata/_custom_type_script = "uid://duhkhf0u81e7"
 
 [connection signal="pressed" from="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Scan/ButtonsVBC/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Scan/ButtonsVBC/StopButton" to="." method="_on_stop_button_pressed"]

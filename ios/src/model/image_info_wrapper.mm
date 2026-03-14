@@ -12,7 +12,7 @@ static String const kHasMipmapsProperty = "has_mipmaps";
 
 @interface ImageInfoWrapper ()
 
-@property (nonatomic) Dictionary data;
+@property(nonatomic) Dictionary data;
 
 @end
 

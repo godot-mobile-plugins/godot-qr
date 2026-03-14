@@ -10,18 +10,18 @@ extends Node
 
 @onready var qr_node: QR = $QR
 @onready var camera_node: NativeCamera = $NativeCamera
-@onready var start_button: Button = $CanvasLayer/MainContainer/VBoxContainer/TabContainer/Scan/ButtonsVBC/StartButton
-@onready var stop_button: Button = $CanvasLayer/MainContainer/VBoxContainer/TabContainer/Scan/ButtonsVBC/StopButton
-@onready var uri_label: Label = $CanvasLayer/MainContainer/VBoxContainer/TabContainer/Scan/ButtonsVBC/UriLabel
-@onready var scan_texture_rect: TextureRect = $CanvasLayer/MainContainer/VBoxContainer/TabContainer/Scan/ScanTextureRect
-@onready var uri_text_edit: TextEdit = $CanvasLayer/MainContainer/VBoxContainer/TabContainer/Generate/ButtonsVBC/UriTextEdit
-@onready var background_rect: ColorRect = $CanvasLayer/MainContainer/VBoxContainer/TabContainer/Generate/ButtonsVBC/ColorHBC/BgColorRect
-@onready var foreground_rect: ColorRect = $CanvasLayer/MainContainer/VBoxContainer/TabContainer/Generate/ButtonsVBC/ColorHBC/FgColorRect
-@onready var generate_button: Button = $CanvasLayer/MainContainer/VBoxContainer/TabContainer/Generate/ButtonsVBC/GenerateButton
-@onready var generate_texture_rect: TextureRect = $CanvasLayer/MainContainer/VBoxContainer/TabContainer/Generate/GenerateTextureRect
-@onready var _label: RichTextLabel = $CanvasLayer/MainContainer/VBoxContainer/RichTextLabel as RichTextLabel
-@onready var _android_texture_rect: TextureRect = $CanvasLayer/MainContainer/VBoxContainer/TextureHBC/AndroidTextureRect as TextureRect
-@onready var _ios_texture_rect: TextureRect = $CanvasLayer/MainContainer/VBoxContainer/TextureHBC/iOSTextureRect as TextureRect
+@onready var start_button := %StartButton as Button
+@onready var stop_button := %StopButton as Button
+@onready var uri_label := %UriLabel as Label
+@onready var scan_texture_rect := %ScanTextureRect as TextureRect
+@onready var uri_text_edit := %UriTextEdit as TextEdit
+@onready var background_rect := %BgColorRect as ColorRect
+@onready var foreground_rect := %FgColorRect as ColorRect
+@onready var generate_button := %GenerateButton as Button
+@onready var generate_texture_rect := %GenerateTextureRect as TextureRect
+@onready var _label := %RichTextLabel as RichTextLabel
+@onready var _android_texture_rect := %AndroidTextureRect as TextureRect
+@onready var _ios_texture_rect := %iOSTextureRect as TextureRect
 
 var _camera: CameraInfo
 var _scan_texture: ImageTexture = null
@@ -50,9 +50,7 @@ func _ready() -> void:
 
 func _on_start_button_pressed() -> void:
 	if _camera:
-		camera_node.start(camera_node.create_feed_request()
-			.set_camera_id(_camera.get_camera_id())
-			.set_rotation(90))
+		camera_node.start(camera_node.create_feed_request().set_camera_id(_camera.get_camera_id()).set_rotation(90))
 		start_button.disabled = true
 		stop_button.disabled = false
 		_print_to_screen("Camera started [id: %s]" % [_camera.get_camera_id()])
@@ -92,12 +90,7 @@ func _on_generate_button_pressed() -> void:
 		_print_to_screen("URI is empty", true)
 		return
 
-	var __image := qr_node.generate_qr_image(
-		uri_text_edit.text,
-		256,
-		foreground_color,
-		background_color
-	)
+	var __image := qr_node.generate_qr_image(uri_text_edit.text, 256, foreground_color, background_color)
 
 	_update_generate_texture(__image)
 

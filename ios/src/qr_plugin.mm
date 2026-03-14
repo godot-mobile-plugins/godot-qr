@@ -4,19 +4,16 @@
 
 #import "qr_plugin.h"
 
-#import "qr_plugin-Swift.h"
-#import "qr_logger.h"
 #import "image_info_wrapper.h"
+#import "qr_logger.h"
+#import "qr_plugin-Swift.h"
 #import "scan_error.h"
-
 
 const String QR_DETECTED_SIGNAL = "qr_detected";
 const String QR_SCAN_FAILED_SIGNAL = "qr_scan_failed";
 
-
-QRPlugin* QRPlugin::instance = NULL;
+QRPlugin *QRPlugin::instance = NULL;
 static QR *qr = nil;
-
 
 void QRPlugin::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("generate_qr"), &QRPlugin::generate_qr);
@@ -38,7 +35,7 @@ Dictionary QRPlugin::generate_qr(String uri, int size, int foreground, int backg
 		return Dictionary(); // Handle error case
 	}
 
-	ImageInfoWrapper *wrapper = [[ImageInfoWrapper alloc] initWithImageInfo: imageInfo];
+	ImageInfoWrapper *wrapper = [[ImageInfoWrapper alloc] initWithImageInfo:imageInfo];
 
 	return [wrapper getRawData];
 }
@@ -46,13 +43,13 @@ Dictionary QRPlugin::generate_qr(String uri, int size, int foreground, int backg
 void QRPlugin::scan_qr(Dictionary imageDict) {
 	os_log_debug(qr_log, "::scan_qr()");
 
-	ImageInfoWrapper *imageInfoWrapper = [[ImageInfoWrapper alloc] initWithData: imageDict];
+	ImageInfoWrapper *imageInfoWrapper = [[ImageInfoWrapper alloc] initWithData:imageDict];
 	ScanResult *result = [qr scanQR:[imageInfoWrapper createImageInfo]];
 
 	if (result.code == CodeSUCCESS) {
 		emit_signal(QR_DETECTED_SIGNAL, [result.uri UTF8String]);
 	} else {
-		ScanError *scanError = [[ScanError alloc] initWithScanResult: result];
+		ScanError *scanError = [[ScanError alloc] initWithScanResult:result];
 		emit_signal(QR_SCAN_FAILED_SIGNAL, [scanError buildRawData]);
 	}
 }

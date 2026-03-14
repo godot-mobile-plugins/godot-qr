@@ -83,7 +83,7 @@ public class ImageInfo {
 	public Dictionary getRawData() {
 		return _data;
 	}
-	
+
 
 	private int toInt(Object godotInt) {
 		return ((Long) godotInt).intValue();

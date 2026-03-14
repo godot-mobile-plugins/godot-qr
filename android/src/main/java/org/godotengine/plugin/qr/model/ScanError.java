@@ -4,8 +4,6 @@
 
 package org.godotengine.plugin.qr.model;
 
-import android.util.Log;
-
 import org.godotengine.godot.Dictionary;
 
 

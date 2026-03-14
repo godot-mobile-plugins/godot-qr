@@ -50,9 +50,7 @@ func has_mipmaps() -> bool:
 
 
 func is_valid() -> bool:
-	return _data.has(DATA_WIDTH_PROPERTY) \
-			and _data.has(DATA_HEIGHT_PROPERTY) \
-			and _data.has(DATA_BUFFER_PROPERTY)
+	return _data.has(DATA_WIDTH_PROPERTY) and _data.has(DATA_HEIGHT_PROPERTY) and _data.has(DATA_BUFFER_PROPERTY)
 
 
 func get_raw_data() -> Dictionary:

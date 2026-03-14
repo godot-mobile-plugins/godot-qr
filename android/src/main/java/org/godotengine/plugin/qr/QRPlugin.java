@@ -95,7 +95,7 @@ public class QRPlugin extends GodotPlugin {
 
 			int width = bitMatrix.getWidth();
 			int height = bitMatrix.getHeight();
-	
+
 			// Prepare the pixel buffer (RGBA8888) -- 4 bytes per pixel (Red, Green, Blue, Alpha)
 			byte[] pixels = new byte[width * height * 4];
 			int offset = 0;
@@ -150,7 +150,8 @@ public class QRPlugin extends GodotPlugin {
 		int height = imageInfo.getHeight();
 
 		if (buffer == null || width <= 0 || height <= 0) {
-			emitSignal(QR_SCAN_FAILED_SIGNAL, new ScanError(Code.INVALID_IMAGE, "Invalid image data").buildRawData());
+			emitSignal(QR_SCAN_FAILED_SIGNAL, new ScanError(Code.INVALID_IMAGE,
+					"Invalid image data").buildRawData());
 			return;
 		}
 
@@ -170,7 +171,8 @@ public class QRPlugin extends GodotPlugin {
 			scanner.process(image)
 					.addOnSuccessListener(barcodes -> {
 						if (barcodes.isEmpty()) {
-							emitSignal(QR_SCAN_FAILED_SIGNAL, new ScanError(Code.NO_CODE_DETECTED, "No QR code detected").buildRawData());
+							emitSignal(QR_SCAN_FAILED_SIGNAL, new ScanError(Code.NO_CODE_DETECTED,
+									"No QR code detected").buildRawData());
 						} else {
 							// Return the raw value of the first detected QR code
 							String rawValue = barcodes.get(0).getRawValue();
@@ -179,7 +181,8 @@ public class QRPlugin extends GodotPlugin {
 					})
 					.addOnFailureListener(e -> {
 						Log.e(LOG_TAG, "Scan failed", e);
-						emitSignal(QR_SCAN_FAILED_SIGNAL, new ScanError(Code.SCANNER_FAILURE, e.getMessage()).buildRawData());
+						emitSignal(QR_SCAN_FAILED_SIGNAL, new ScanError(Code.SCANNER_FAILURE,
+								e.getMessage()).buildRawData());
 					});
 		} catch (Exception e) {
 			Log.e(LOG_TAG, "Error processing image", e);

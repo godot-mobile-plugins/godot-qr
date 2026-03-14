@@ -4,13 +4,7 @@
 
 class_name ScanError extends RefCounted
 
-enum Code {
-	NONE,
-	INVALID_IMAGE,
-	NO_CODE_DETECTED,
-	SCANNER_FAILURE,
-	INTERNAL_ERROR
-}
+enum Code { NONE, INVALID_IMAGE, NO_CODE_DETECTED, SCANNER_FAILURE, INTERNAL_ERROR }
 
 const DATA_CODE_PROPERTY: String = "code"
 const DATA_DESCRIPTION_PROPERTY: String = "description"
