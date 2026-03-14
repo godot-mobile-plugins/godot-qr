@@ -13,7 +13,7 @@ const String QR_DETECTED_SIGNAL = "qr_detected";
 const String QR_SCAN_FAILED_SIGNAL = "qr_scan_failed";
 
 QRPlugin *QRPlugin::instance = NULL;
-static QR *qr = nil;
+static QRKit *qr = nil;
 
 void QRPlugin::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("generate_qr"), &QRPlugin::generate_qr);
@@ -46,7 +46,7 @@ void QRPlugin::scan_qr(Dictionary imageDict) {
 	ImageInfoWrapper *imageInfoWrapper = [[ImageInfoWrapper alloc] initWithData:imageDict];
 	ScanResult *result = [qr scanQR:[imageInfoWrapper createImageInfo]];
 
-	if (result.code == CodeSUCCESS) {
+	if (result.code == CodeSuccess) {
 		emit_signal(QR_DETECTED_SIGNAL, [result.uri UTF8String]);
 	} else {
 		ScanError *scanError = [[ScanError alloc] initWithScanResult:result];
@@ -62,7 +62,7 @@ QRPlugin::QRPlugin() {
 	instance = this;
 
 	if (qr == nil) {
-		qr = [[QR alloc] init];
+		qr = [[QRKit alloc] init];
 	}
 }
 

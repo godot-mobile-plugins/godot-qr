@@ -6,7 +6,7 @@ import Foundation
 import CoreImage
 import UIKit
 
-@objc public class QR: NSObject {
+@objc public class QRKit: NSObject {
 
 	/// Generates a QR code and returns it as an ImageInfo object.
 	/// Returns nil if generation fails.
@@ -38,9 +38,12 @@ import UIKit
 		let transformedImage = colorOutput.transformed(by: CGAffineTransform(scaleX: scaleX, y: scaleY))
 
 		// Render to Bitmap (RGBA8)
+		guard let workingColorSpace = CGColorSpace(name: CGColorSpace.sRGB),
+			let outputColorSpace = CGColorSpace(name: CGColorSpace.sRGB) else { return nil }
+
 		let context = CIContext(options: [
-			.workingColorSpace: CGColorSpace(name: CGColorSpace.sRGB)!,
-			.outputColorSpace: CGColorSpace(name: CGColorSpace.sRGB)!,
+			.workingColorSpace: workingColorSpace,
+			.outputColorSpace: outputColorSpace,
 			.useSoftwareRenderer: false
 		])
 		guard let cgImage = context.createCGImage(transformedImage, from: transformedImage.extent) else { return nil }
@@ -83,7 +86,7 @@ import UIKit
 
 		// Basic input validation
 		if buffer.isEmpty || width <= 0 || height <= 0 {
-			return ScanResult(code: .INVALID_IMAGE, uri: "", description: "Invalid Image Data")
+			return ScanResult(code: .invalidImage, uri: "", description: "Invalid Image Data")
 		}
 
 		// Create CIImage from raw data in Godot's RGBA8 format (Format 5)
@@ -97,34 +100,33 @@ import UIKit
 		)
 
 		if ciImage.extent.isEmpty || ciImage.extent.width <= 0 || ciImage.extent.height <= 0 {
-			return ScanResult(code: .INVALID_IMAGE, uri: "", description: "Invalid image dimensions after creating CIImage")
+			return ScanResult(code: .invalidImage, uri: "", description: "Invalid image dimensions after creating CIImage")
 		}
 
 		// Detect
-		let detector = CIDetector(ofType: CIDetectorTypeQRCode, context: nil, options: [CIDetectorAccuracy: CIDetectorAccuracyHigh])
+		let detectorOptions = [CIDetectorAccuracy: CIDetectorAccuracyHigh]
+		let detector = CIDetector(ofType: CIDetectorTypeQRCode, context: nil, options: detectorOptions)
 		let features = detector?.features(in: ciImage)
 
 		if let qrFeature = features?.first as? CIQRCodeFeature, let message = qrFeature.messageString {
-			return ScanResult(code: .SUCCESS, uri: message, description: "QR Code Detected")
+			return ScanResult(code: .success, uri: message, description: "QR Code Detected")
 		}
 
-		return ScanResult(code: .NO_CODE_DETECTED, uri: "", description: "No QR code detected")
+		return ScanResult(code: .noCodeDetected, uri: "", description: "No QR code detected")
 	}
 
 	// ARGB --> CIColor extraction
 	private func extractColor(from intColor: Int) -> CIColor {
 		// Godot Color.to_argb32() = 0xAARRGGBB
-		let a = CGFloat((intColor >> 24) & 0xFF) / 255.0
-		let r = CGFloat((intColor >> 16) & 0xFF) / 255.0
-		let g = CGFloat((intColor >> 8) & 0xFF) / 255.0
-		let b = CGFloat(intColor & 0xFF) / 255.0
+		let alpha = CGFloat((intColor >> 24) & 0xFF) / 255.0
+		let red = CGFloat((intColor >> 16) & 0xFF) / 255.0
+		let green = CGFloat((intColor >> 8) & 0xFF) / 255.0
+		let blue = CGFloat(intColor & 0xFF) / 255.0
 
-		let srgb = CGColorSpace(name: CGColorSpace.sRGB)!
-
-		let cgColor = CGColor(
-			colorSpace: srgb,
-			components: [r, g, b, a]
-		)!
+		guard let srgb = CGColorSpace(name: CGColorSpace.sRGB),
+			let cgColor = CGColor(colorSpace: srgb, components: [red, green, blue, alpha]) else {
+			return CIColor(red: red, green: green, blue: blue, alpha: alpha)
+		}
 
 		return CIColor(cgColor: cgColor)
 	}

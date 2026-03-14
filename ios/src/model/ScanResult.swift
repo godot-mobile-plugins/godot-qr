@@ -5,11 +5,11 @@
 import Foundation
 
 @objc enum Code: Int {
-	case SUCCESS = 0
-	case INVALID_IMAGE = 1
-	case NO_CODE_DETECTED = 2
-	case SCANNER_FAILURE = 3
-	case INTERNAL_ERROR = 4
+	case success = 0
+	case invalidImage = 1
+	case noCodeDetected = 2
+	case scannerFailure = 3
+	case internalError = 4
 }
 
 @objc public final class ScanResult: NSObject {

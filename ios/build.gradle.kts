@@ -109,9 +109,14 @@ tasks {
                 include("**/*.gen.h")
                 include("**/*.gen.cpp")
             }
+        
+        val internalBuildFiles =
+            project.fileTree(godotDirectory).matching {
+                include(".scons*")
+            }
 
         // Inputs: Include everything in the directory EXCEPT the generated files
-        inputs.files(project.fileTree(godotDirectory).minus(generatedFiles))
+        inputs.files(project.fileTree(godotDirectory).minus(generatedFiles).minus(internalBuildFiles))
 
         // Outputs: Use the defined generated files pattern
         outputs.files(generatedFiles)

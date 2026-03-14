@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07ACB09E2F65679C000F5E44 /* QRKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ACB09D2F65679C000F5E44 /* QRKit.swift */; };
 		07DF21972F3EE15300E2725C /* ImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF21892F3EE15300E2725C /* ImageInfo.swift */; };
 		07DF21982F3EE15300E2725C /* qr_plugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07DF21922F3EE15300E2725C /* qr_plugin.mm */; };
 		07DF21992F3EE15300E2725C /* qr_plugin_bootstrap.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07DF21942F3EE15300E2725C /* qr_plugin_bootstrap.mm */; };
-		07DF219A2F3EE15300E2725C /* QR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DF218E2F3EE15300E2725C /* QR.swift */; };
 		07DF219B2F3EE15300E2725C /* scan_error.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07DF218B2F3EE15300E2725C /* scan_error.mm */; };
 		07DF219C2F3EE15300E2725C /* qr_logger.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07DF21902F3EE15300E2725C /* qr_logger.mm */; };
 		07DF219D2F3EE15300E2725C /* image_info_wrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07DF21882F3EE15300E2725C /* image_info_wrapper.mm */; };
@@ -30,13 +30,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		07ACB09D2F65679C000F5E44 /* QRKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRKit.swift; sourceTree = "<group>"; };
 		07DF21872F3EE15300E2725C /* image_info_wrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = image_info_wrapper.h; sourceTree = "<group>"; };
 		07DF21882F3EE15300E2725C /* image_info_wrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = image_info_wrapper.mm; sourceTree = "<group>"; };
 		07DF21892F3EE15300E2725C /* ImageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInfo.swift; sourceTree = "<group>"; };
 		07DF218A2F3EE15300E2725C /* scan_error.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = scan_error.h; sourceTree = "<group>"; };
 		07DF218B2F3EE15300E2725C /* scan_error.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = scan_error.mm; sourceTree = "<group>"; };
 		07DF218C2F3EE15300E2725C /* ScanResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResult.swift; sourceTree = "<group>"; };
-		07DF218E2F3EE15300E2725C /* QR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QR.swift; sourceTree = "<group>"; };
 		07DF218F2F3EE15300E2725C /* qr_logger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qr_logger.h; sourceTree = "<group>"; };
 		07DF21902F3EE15300E2725C /* qr_logger.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = qr_logger.mm; sourceTree = "<group>"; };
 		07DF21912F3EE15300E2725C /* qr_plugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qr_plugin.h; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				07DF218D2F3EE15300E2725C /* model */,
-				07DF218E2F3EE15300E2725C /* QR.swift */,
+				07ACB09D2F65679C000F5E44 /* QRKit.swift */,
 				07DF218F2F3EE15300E2725C /* qr_logger.h */,
 				07DF21902F3EE15300E2725C /* qr_logger.mm */,
 				07DF21912F3EE15300E2725C /* qr_plugin.h */,
@@ -170,9 +170,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				07DF21972F3EE15300E2725C /* ImageInfo.swift in Sources */,
+				07ACB09E2F65679C000F5E44 /* QRKit.swift in Sources */,
 				07DF21982F3EE15300E2725C /* qr_plugin.mm in Sources */,
 				07DF21992F3EE15300E2725C /* qr_plugin_bootstrap.mm in Sources */,
-				07DF219A2F3EE15300E2725C /* QR.swift in Sources */,
 				07DF219B2F3EE15300E2725C /* scan_error.mm in Sources */,
 				07DF219C2F3EE15300E2725C /* qr_logger.mm in Sources */,
 				07DF219D2F3EE15300E2725C /* image_info_wrapper.mm in Sources */,

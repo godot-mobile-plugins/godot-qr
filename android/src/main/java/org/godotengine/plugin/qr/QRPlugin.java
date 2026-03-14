@@ -5,10 +5,6 @@
 package org.godotengine.plugin.qr;
 
 import android.app.Activity;
-import android.util.Log;
-import android.view.View;
-
-import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.util.Log;
@@ -79,18 +75,18 @@ public class QRPlugin extends GodotPlugin {
 	}
 
 	@UsedByGodot
-	public Dictionary generate_qr(String a_uri, int a_size, int a_foreground, int a_background) {
-		Log.d(LOG_TAG, "generate_qr() invoked with URI: " + a_uri);
+	public Dictionary generate_qr(String aUri, int aSize, int aForeground, int aBackground) {
+		Log.d(LOG_TAG, "generate_qr() invoked with URI: " + aUri);
 
 		ImageInfo result = new ImageInfo();
 
 		try {
 			// Create the BitMatrix for the QR Code
 			BitMatrix bitMatrix = new MultiFormatWriter().encode(
-					a_uri,
+					aUri,
 					BarcodeFormat.QR_CODE,
-					a_size,
-					a_size
+					aSize,
+					aSize
 			);
 
 			int width = bitMatrix.getWidth();
@@ -101,30 +97,30 @@ public class QRPlugin extends GodotPlugin {
 			int offset = 0;
 
 			// Extract ARGB components from the int, which is packed as ARGB
-			byte fg_a = (byte) Color.alpha(a_foreground);
-			byte fg_r = (byte) Color.red(a_foreground);
-			byte fg_g = (byte) Color.green(a_foreground);
-			byte fg_b = (byte) Color.blue(a_foreground);
+			byte fgAlpha = (byte) Color.alpha(aForeground);
+			byte fgRed = (byte) Color.red(aForeground);
+			byte fgGreen = (byte) Color.green(aForeground);
+			byte fgBlue = (byte) Color.blue(aForeground);
 
-			byte bg_a = (byte) Color.alpha(a_background);
-			byte bg_r = (byte) Color.red(a_background);
-			byte bg_g = (byte) Color.green(a_background);
-			byte bg_b = (byte) Color.blue(a_background);
+			byte bgAlpha = (byte) Color.alpha(aBackground);
+			byte bgRed = (byte) Color.red(aBackground);
+			byte bgGreen = (byte) Color.green(aBackground);
+			byte bgBlue = (byte) Color.blue(aBackground);
 
 			// Iterate through the matrix and set pixel colors
 			for (int y = 0; y < height; y++) {
 				for (int x = 0; x < width; x++) {
 					// Store as RGBA for Godot
 					if (bitMatrix.get(x, y)) {
-						pixels[offset] = fg_r;
-						pixels[offset + 1] = fg_g;
-						pixels[offset + 2] = fg_b;
-						pixels[offset + 3] = fg_a;
+						pixels[offset] = fgRed;
+						pixels[offset + 1] = fgGreen;
+						pixels[offset + 2] = fgBlue;
+						pixels[offset + 3] = fgAlpha;
 					} else {
-						pixels[offset] = bg_r;
-						pixels[offset + 1] = bg_g;
-						pixels[offset + 2] = bg_b;
-						pixels[offset + 3] = bg_a;
+						pixels[offset] = bgRed;
+						pixels[offset + 1] = bgGreen;
+						pixels[offset + 2] = bgBlue;
+						pixels[offset + 3] = bgAlpha;
 					}
 					offset += 4;
 				}
