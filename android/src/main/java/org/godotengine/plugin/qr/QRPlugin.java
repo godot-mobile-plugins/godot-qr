@@ -17,10 +17,13 @@ import com.google.mlkit.vision.barcode.common.Barcode;
 import com.google.mlkit.vision.common.InputImage;
 
 import com.google.zxing.BarcodeFormat;
+import com.google.zxing.EncodeHintType;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.common.BitMatrix;
 
 import java.nio.ByteBuffer;
+import java.util.EnumMap;
+import java.util.Map;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -81,12 +84,19 @@ public class QRPlugin extends GodotPlugin {
 		ImageInfo result = new ImageInfo();
 
 		try {
+			// Force UTF-8 so MLKit (and all scanners) decode non-ASCII characters correctly.
+			// Without this hint ZXing defaults to ISO-8859-1, which produces byte sequences
+			// that MLKit's getRawValue() cannot decode as UTF-8 and therefore returns null.
+			Map<EncodeHintType, Object> hints = new EnumMap<>(EncodeHintType.class);
+			hints.put(EncodeHintType.CHARACTER_SET, "UTF-8");
+
 			// Create the BitMatrix for the QR Code
 			BitMatrix bitMatrix = new MultiFormatWriter().encode(
 					aUri,
 					BarcodeFormat.QR_CODE,
 					aSize,
-					aSize
+					aSize,
+					hints
 			);
 
 			int width = bitMatrix.getWidth();
@@ -170,9 +180,19 @@ public class QRPlugin extends GodotPlugin {
 							emitSignal(QR_SCAN_FAILED_SIGNAL, new ScanError(Code.NO_CODE_DETECTED,
 									"No QR code detected").buildRawData());
 						} else {
-							// Return the raw value of the first detected QR code
+							// getRawValue() returns null when MLKit cannot decode the raw bytes as
+							// UTF-8 (e.g. a QR generated with ISO-8859-1 encoding and no ECI marker).
+							// Fall back to getDisplayValue(), and emit a failure if both are null.
 							String rawValue = barcodes.get(0).getRawValue();
-							emitSignal(QR_DETECTED_SIGNAL, rawValue);
+							if (rawValue == null) {
+								rawValue = barcodes.get(0).getDisplayValue();
+							}
+							if (rawValue == null) {
+								emitSignal(QR_SCAN_FAILED_SIGNAL, new ScanError(Code.SCANNER_FAILURE,
+										"QR code detected but value could not be decoded").buildRawData());
+							} else {
+								emitSignal(QR_DETECTED_SIGNAL, rawValue);
+							}
 						}
 					})
 					.addOnFailureListener(e -> {

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bcqb5hwnjbtob" path="res://Main.gd" id="1_wt50o"]
 [ext_resource type="Texture2D" uid="uid://ccwvfcumkwxsd" path="res://assets/qr-android.png" id="2_qti4s"]
 [ext_resource type="Texture2D" uid="uid://bhgbr1eclf27y" path="res://assets/qr-ios.png" id="3_cm0pq"]
-[ext_resource type="Script" path="res://addons/QRPlugin/QR.gd" id="4_cm0pq"]
+[ext_resource type="Script" uid="uid://dr4dhynghraqw" path="res://addons/QRPlugin/QR.gd" id="4_cm0pq"]
 [ext_resource type="Script" uid="uid://bkegxtuw8lpt8" path="res://addons/NativeCameraPlugin/NativeCamera.gd" id="4_fos0i"]
 
 [node name="Main" type="Node" unique_id=369831344]
