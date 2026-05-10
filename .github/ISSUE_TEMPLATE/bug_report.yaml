@@ -47,6 +47,7 @@ body:
       - 4.5.1.stable
       - 4.6.stable
       - 4.6.1.stable
+      - 4.6.2.stable
       - 4.x
       - Other
     default: 2
@@ -77,10 +78,12 @@ body:
     label: Plugin Version
     description: What version of the plugin are you running?
     options:
-      - "1.0"
+      - "1.2"
+      - "1.1.1"
       - "1.1"
+      - "1.0"
       - Other
-    default: 1
+    default: 0
   validations:
     required: true
 - type: dropdown

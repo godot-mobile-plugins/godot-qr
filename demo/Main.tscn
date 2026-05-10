@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ccwvfcumkwxsd" path="res://assets/qr-android.png" id="2_qti4s"]
 [ext_resource type="Texture2D" uid="uid://bhgbr1eclf27y" path="res://assets/qr-ios.png" id="3_cm0pq"]
 [ext_resource type="Script" uid="uid://dr4dhynghraqw" path="res://addons/QRPlugin/QR.gd" id="4_cm0pq"]
-[ext_resource type="Script" uid="uid://bkegxtuw8lpt8" path="res://addons/NativeCameraPlugin/NativeCamera.gd" id="4_fos0i"]
+[ext_resource type="Script" uid="uid://cdgevvyvdm7av" path="res://addons/NativeCameraPlugin/NativeCamera.gd" id="4_fos0i"]
 
 [node name="Main" type="Node" unique_id=369831344]
 script = ExtResource("1_wt50o")
@@ -47,7 +47,6 @@ stretch_mode = 5
 
 [node name="iOSTextureRect" type="TextureRect" parent="CanvasLayer/MainContainer/VBoxContainer/TextureHBC" unique_id=402921631]
 unique_name_in_owner = true
-visible = false
 custom_minimum_size = Vector2(0, 128)
 layout_mode = 2
 texture = ExtResource("3_cm0pq")
@@ -99,6 +98,7 @@ text = "Stop Scan"
 [node name="UriLabel" type="Label" parent="CanvasLayer/MainContainer/VBoxContainer/TabContainer/Scan/ButtonsVBC" unique_id=1632404993]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 25)
+custom_maximum_size = Vector2(150, -1)
 layout_mode = 2
 autowrap_mode = 1
 
